@@ -2,7 +2,12 @@
 
 LTree is a free and open-source theme for [Astro](https://astro.build). It's a result of exploring how to build a clone of Linkinbio and Linktree, rolled into one, using Astro. Blog post here -> https://darko.io/posts/linktree-and-linkinbio-clone-with-astro-and-tinacms.
 
-Demo: https://ltree.darko.io
+### [[Demo here](https://ltree.darko.io)]
+
+<div style="display: flex; justify-content: space-between; padding-bottom: 15px;">
+  <img style="width: 49%;" src="./theme_1.png" />
+  <img style="width: 49%;" src="./theme_2.png" />
+</div>
 
 ## Quickstart
 
