@@ -1,0 +1,28 @@
+{
+  "name": "astro-ltree",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "tinacms dev -c \"astro dev\"",
+    "start": "tinacms dev -c \"astro dev\"",
+    "build": "tinacms build && astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.3.1",
+    "@astrojs/solid-js": "^3.0.2",
+    "@astrojs/tailwind": "^5.0.2",
+    "astro": "^3.6.1",
+    "solid-js": "^1.8.6",
+    "tailwindcss": "^3.3.5",
+    "tinacms": "^1.5.27",
+    "typescript": "^5.3.2"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^1.5.37",
+    "@types/node": "^20.10.1",
+    "prettier": "^3.1.0",
+    "prettier-plugin-astro": "^0.12.2"
+  }
+}
