@@ -1,47 +1,47 @@
-# Astro Starter Kit: Minimal
+# 🌳 LTree 🌳
 
-```sh
-npm create astro@latest -- --template minimal
-```
+LTree is a free and open-source theme for [Astro](https://astro.build). It's a result of exploring how to build a clone of Linkinbio and Linktree, rolled into one, using Astro. Blog post here -> https://darko.io/posts/linktree-and-linkinbio-clone-with-astro-and-tinacms.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+Demo: https://ltree.darko.io
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Quickstart
 
-## 🚀 Project Structure
+1. Run `npx degit https://github.com/DBozhinovski/astro-theme-ltree my-site-name` to get a "clean slate" copy of this repo.
+2. Run `npm install` inside the cloned directory to install dependencies.
+3. Customize and deploy!
 
-Inside of your Astro project, you'll see the following folders and files:
+Requires Node.js v18+.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Features
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- A ready-to-use clone of Linkinbio and Linktree, hostable as a static site.
+- Optional TinaCMS integration for editing the site content.
+- Uses the Astro content collection API, which means you can edit the raw markdown files.
+- Lightweight, minimalistic, and easy to customize.
+- Tailwind for styling.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### TinaCMS
 
-Any static assets, like images, can be placed in the `public/` directory.
+LTree comes with optional TinaCMS integration. It's already enabled by default in local mode (look at the `run` and `start` scripts in `package.json`).
 
-## 🧞 Commands
+You can also enable it in production via Tina Cloud by following the instructions: https://tina.io/docs/tina-cloud/overview/. More on the integration and steps to enable it here: https://darko.io/posts/linktree-and-linkinbio-clone-with-astro-and-tinacms.
 
-All commands are run from the root of the project, from a terminal:
+## Development and customization notes
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### Pages and components
 
-## 👀 Want to learn more?
+The project has two pages - `index.astro` and `postlinks.astro`. The former is the Linktree clone, and the latter is the Linkinbio clone. Both pages follow a similar structure but render different mid-section contents.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+There is only one custom component - `src/components/SocialIcon.astro`. It's used to render the social icons in the social sections of both pages.
+
+### Styling
+
+The theme uses Tailwind for styling without any customizations. As there's not a lot of styling, it would be trivial to remove it if you'd go for vanilla CSS instead. The same goes for customization via Tailwind config - you can likely add any fonts or plugins and customize the colors to your liking.
+
+### Content
+
+If you opt-in for TinaCMS and would like to make some changes to the data model, you'd have to edit the schema in both `src/content/config.ts` and `src/tina/config.ts.` Otherwise, the theme is built to rely only on the Astro content collection API for reading the content.
+
+## Credits and acknowledgments
+
+If you find this theme useful, please consider starring the repo, and sharing it.
