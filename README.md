@@ -5,8 +5,8 @@ LTree is a free and open-source theme for [Astro](https://astro.build). It's a r
 ### [[Demo here](https://ltree.darko.io)]
 
 <div style="display: flex; justify-content: space-between; padding-bottom: 15px;">
-  <img style="width: 49%;" src="./theme_1.png" />
-  <img style="width: 49%;" src="./theme_2.png" />
+  <img style="width: 49%; object-fit: cover; max-height: 430px; object-position: 50% 0;" src="./theme_1.png" />
+  <img style="width: 49%; object-fit: cover; max-height: 430px; object-position: 50% 0;" src="./theme_2.png" />
 </div>
 
 ## Quickstart
