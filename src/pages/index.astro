@@ -14,43 +14,29 @@ const { Content } = await profile.render();
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>LTree | {profile.data.name}</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Google Fonts End -->
+    <title>Links | {profile.data.name}</title>
   </head>
-  <body>
+  <body class="font-public-sans dark:bg-slate-950 dark:text-slate-100">
     <main class="flex flex-col items-center justify-center p-4 pt-10">
       <img src={profile.data.avatar} alt="avatar" class="w-32 h-32 rounded-full" />
-      <h1 class="text-2xl mt-4">{profile.data.name}</h1>
+      <h1 class="text-3xl mt-4 font-[700]">{profile.data.name}</h1>
       <section class="text-sm max-w-[400px] text-center">
         <Content />
       </section>
       <nav>
-        <ul class="flex divide-x divide-blue-700 p-2">
-          <li class="text-lg"><a class="block px-2 text-blue-500" href="/">Links</a></li>
-          <li class="text-lg"><a class="block px-2 text-blue-500" href="/postlinks">Posts</a></li>
+        <ul class="flex divide-x divide-slate-950 dark:divide-slate-200 p-2">
+          <li class="text-lg"><a class="block px-2 text-slate-950 dark:text-slate-200" href="/">Links</a></li>
+          <li class="text-lg"><a class="block px-2 text-slate-950 dark:text-slate-200" href="/postlinks">Posts</a></li>
         </ul>
       </nav>
-      <ul class="flex flex-col gap-y-4 pt-10 min-w-[400px]">
-        {
-          links.sort((a, b) => {
-            if (a.data.order < b.data.order) {
-              return -1;
-            }
-            if (a.data.order > b.data.order) {
-              return 1;
-            }
-            return 0;
-          }).map((link) => (
-            <li class="border border-black border-2 w-full text-center p-4 text-xl font-semibold">
-              <a href={link.data.url} class="block">
-                {link.data.title}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
       <ul class="flex gap-4 items-center justify-center flex-wrap pt-10">
         {
           socials.sort((a, b) => {
@@ -62,9 +48,28 @@ const { Content } = await profile.render();
             }
             return 0;
           }).map((social) => (
-            <li class="border border-black border-2 rounded-full">
-              <a href={social.data.url} class="block p-4">
-                <SocialIcon id={social.data.icon[0]}>
+            <li class="border border-black dark:border-slate-200 dark:hover:bg-slate-200 border-2 rounded-full hover:bg-black">
+              <a href={social.data.url} class="block p-4 hover:text-white dark:hover:text-slate-950">
+                <SocialIcon id={social.data.icon[0]}/>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <ul class="flex flex-col gap-y-4 pt-10 min-w-[400px] px-4 sm:px-0">
+        {
+          links.sort((a, b) => {
+            if (a.data.order < b.data.order) {
+              return -1;
+            }
+            if (a.data.order > b.data.order) {
+              return 1;
+            }
+            return 0;
+          }).map((link) => (
+            <li class="border border-black dark:border-slate-200 border-2 w-full text-center p-4 text-xl rounded-lg hover:bg-black hover:text-white font-semibold dark:hover:bg-slate-200 dark:hover:text-slate-950">
+              <a href={link.data.url} class="block">
+                  {link.data.title}
               </a>
             </li>
           ))

@@ -7,6 +7,8 @@ const socials = await getCollection("socials");
 const posts = await getCollection("posts");
 
 const profile = bio[0];
+
+const { Content } = await profile.render();
 ---
 
 <html lang="en">
@@ -17,14 +19,17 @@ const profile = bio[0];
     <meta name="generator" content={Astro.generator} />
     <title>LTree | {profile.data.name}</title>
   </head>
-  <body>
+  <body class="font-public-sans dark:bg-slate-950 dark:text-slate-100">
     <main class="flex flex-col items-center justify-center p-4 pt-10">
       <img src={profile.data.avatar} alt="avatar" class="w-32 h-32 rounded-full" />
-      <h1 class="text-2xl mt-4">{profile.data.name}</h1>
+      <h1 class="text-3xl mt-4 font-[700]">{profile.data.name}</h1>
+      <section class="text-sm max-w-[400px] text-center">
+        <Content />
+      </section>
       <nav>
-        <ul class="flex divide-x divide-blue-700 p-2">
-          <li class="text-lg"><a class="block px-2 text-blue-500" href="/">Links</a></li>
-          <li class="text-lg"><a class="block px-2 text-blue-500" href="/postlinks">Posts</a></li>
+        <ul class="flex divide-x divide-slate-950 dark:divide-slate-200 p-2">
+          <li class="text-lg"><a class="block px-2 text-slate-950 dark:text-slate-200" href="/">Links</a></li>
+          <li class="text-lg"><a class="block px-2 text-slate-950 dark:text-slate-200" href="/postlinks">Posts</a></li>
         </ul>
       </nav>
       <ul class="flex gap-4 items-center justify-center flex-wrap pt-10">
@@ -38,9 +43,9 @@ const profile = bio[0];
             }
             return 0;
           }).map((social) => (
-            <li class="border border-black border-2 rounded-full">
-              <a href={social.data.url} class="block p-4">
-                <SocialIcon id={social.data.icon[0]}>
+            <li class="border border-black dark:border-slate-200 dark:hover:bg-slate-200 border-2 rounded-full hover:bg-black">
+              <a href={social.data.url} class="block p-4 hover:text-white dark:hover:text-slate-950">
+                <SocialIcon id={social.data.icon[0]}/>
               </a>
             </li>
           ))
