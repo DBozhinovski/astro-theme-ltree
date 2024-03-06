@@ -4,9 +4,9 @@ LTree is a free and open-source theme for [Astro](https://astro.build). It's a r
 
 ### [[Demo here](https://ltree.darko.io)]
 
-<img style="" src="./theme_1.png" />
+![image](https://github.com/DBozhinovski/astro-theme-ltree/assets/64415791/5b38139f-26f9-4da5-a4f9-cfb8d1c091e6)
 
-<img style="" src="./theme_2.png" />
+![image](https://github.com/DBozhinovski/astro-theme-ltree/assets/64415791/4897e109-7312-4c40-8fdb-e2c8293731cc)
 
 ## Quickstart
 
@@ -23,6 +23,7 @@ Requires Node.js v18+.
 - Uses the Astro content collection API, which means you can edit the raw markdown files.
 - Lightweight, minimalistic, and easy to customize.
 - Tailwind for styling.
+- Dark & Light mode dynamically supported
 
 ### TinaCMS
 
@@ -49,3 +50,5 @@ If you opt-in for TinaCMS and would like to make some changes to the data model,
 ## Credits and acknowledgments
 
 If you find this theme useful, please consider starring the repo, and sharing it.
+
+@leowilkin contributed to dark mode, and styling updates
