@@ -174,6 +174,7 @@ export default defineConfig({
               "whatsapp",
               "telegram",
               "email",
+              "x",
             ],
           },
         ],
